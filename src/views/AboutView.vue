@@ -16,21 +16,39 @@
     <div id="main">
       <div class="content">
 
-        <div class="form-container" style="width: 100%;">
+        <div class="form-container">
 
-          <div class="content-glass" style="width: 100%;">
+          <div class="content-glass">
 
-            <span class="Header-span">
-              {{ t('about.title') }}
+            <span v-if="state.langEn" class="Header-span">
+              Important Notice: Procyon Platform Closure & Safe Withdrawal of<br>
+              User Funds
+            </span>
+            <span v-else class="Header-span">
+              ▼重要なお知らせ<br>
+              Procyonプラットフォーム閉鎖と出金手続きのご案内
             </span>
 
             <div class="Header-line">
             </div>
 
             <div class="topInfo">
-              <span>
-                {{ t('about.platform') }}
+              <span v-if="state.langEn">
+                Procyon's interactive platform is now <span class="boldSpan">closed</span> due to new regulatory requirements in Singapore.<br>
+                <span class="boldSpan">User logins, balance viewing, and in-platform withdrawals are no longer available.</span>
               </span>
+              <div v-else class="jpInfo">
+                <span>Procyonコミュニティの皆さまへ</span>
+
+                <span>平素よりお世話になっております。<br>この度、表題の件に関してご案内をいたします。</span>
+
+                <span>
+                シンガポールにおける新たな規制要件により、Procyonのインタラクティブプラットフォーム<br>
+                は<span class="boldSpan">閉鎖されました</span>。<br>
+                これに伴い、<span class="boldSpan">ログイン、残高確認、プラットフォーム内での出金機能等はご利用いただけない</span><br>
+                <span class="boldSpan">状況です</span>。
+                </span>
+              </div>
 
               <span v-if="state.langEn">
                 (See the official MAS regulatory update <a href="https://www.reedsmith.com/en/perspectives/2025/06/mas-finalises-clarifies-regulatory-regime-digital-token-service-providers?utm_source=chatgpt.com">here</a>.)
@@ -39,16 +57,38 @@
                 (公式のMAS規制アップデートは<a href="https://www.reedsmith.com/en/perspectives/2025/06/mas-finalises-clarifies-regulatory-regime-digital-token-service-providers?utm_source=chatgpt.com">こちら</a>をご覧ください)
               </span>
 
-              <span>
-                {{ t('about.we') }}
+              <span v-if="state.langEn">
+                We know how worrying and frustrating this is and we are truly sorry for the disruption.
+              </span>
+              <span v-else>
+                <span class="boldSpan">皆さまには、ご不安やご不便をおかけしていることを心よりお詫び申し上げます。<br>
+                当プラットフォームにて管理されていた全ユーザーの残高については、マイニングプールパー<br>
+                トナーとの継続的な照合作業により記録・保全されており、損失が発生している兆候はありま<br>
+                せん。皆さまの残高は、マイニングプールパートナーにより保持され、Procyonは全ユーザーが<br>
+                正しく資産を受け取れるよう、検証・監督を行っております。</span>
               </span>
 
-              <span>
-                {{ t('about.reassure') }}
+              <span v-if="state.langEn" class="boldSpan">
+                We want to reassure you that all user balances have been recorded and safeguarded<br>
+                through ongoing reconciliations with our mining pool partner. We have no indication of<br>
+                any losses. Balances are maintained by the mining pool partner, and Procyon is actively<br>
+                overseeing the process to ensure each verified user receives their entitled funds.
+              </span>
+              <span v-else>
+                今回の新たな規制により法的に当プラットフォームの出金機能が維持できないため、<span class="boldSpan">すべての<br>
+                ユーザーを対象に弊社から案内される『資産の出金申請フォーム』のGoogleフォームを通じ<br>
+                て、皆さまの出金依頼をご提出いただく必要があります</span>。<br>
+                マイニングプールパートナーがこの情報をもとに安全に送金処理を行う予定です。
               </span>
 
-              <span>
-                {{ t('about.must') }}
+              <span v-if="state.langEn">
+                Because the platform’s withdrawal function cannot legally operate, <span class="boldSpan">every user must now</span><br>
+                <span class="boldSpan">submit a withdrawal request through the official Google Form</span> so that the mining pool<br>
+                partner can process payouts securely. Links to the form and detailed instructions are provided<br>
+                below on this page.
+              </span>
+              <span v-else>
+                『資産の出金申請フォーム』の詳細手順は、以下をご確認ください。
               </span>
 
           </div>
@@ -58,8 +98,13 @@
                 {{ t('about.funds') }}
               </span>
 
-              <span>
-                {{ t('about.mining') }}
+              <span v-if="state.langEn">
+                While the platform is offline, <span class="boldSpan">withdrawals are fulfilled directly by our mining pool partner.</span><br>
+                Procyon’s role is to verify user identity and pass verified information securely.
+              </span>
+              <span v-else>
+                プラットフォームがオフラインとなっている間、<span class="boldSpan">出金はマイニングプールパートナーによって<br>
+                直接処理されます。</span>Procyonの役割はユーザーの本人確認を行い、確認済みの情報を安全に引<br>き渡すことです。
               </span>
 
               <span>
@@ -74,52 +119,101 @@
 
               <span>{{ t('about.ready') }}</span>
 
-              <div class="stepBox">
+              <div v-if="state.langEn" class="stepBox">
                 <span>{{ t('about.KYC') }}</span>
-                <span>{{ t('about.passport') }}</span>
-                <span>{{ t('about.withdrawal') }}</span>
+                <span>• Identity documents (a clear photo of your passport photo page, plus a selfie<br> holding your passport)</span>
+                <span>• Withdrawal addresses (double-check each carefully — Aleo; IRON + Tag/MEMO;<br> SMH; BTC; USDT with network specified)</span>
+              </div>
+              <div v-else class="stepBox">
+                <span>{{ t('about.KYC') }}</span>
+                <span>•	本人確認書類 (身分証明書の顔写真ページの鮮明な写真、およびそれを持った自撮り写<br>真)</span>
+                <span>•	出金先アドレス (必ず間違いのないようご確認ください: Aleo／IRON＋タグ・メモ／<br>SMH／BTC／USDT ※ネットワーク種別を明記)</span>
               </div>
 
-              <span class="stepHeader">
+              <span class="stepHeader" style="margin-top: 15px">
                 {{ t('about.step2') }}
               </span>
 
-              <span>{{ t('about.prepared') }}</span>
+              <span v-if="state.langEn">Once you have everything prepared, submit your request through the official Google Form<br>(choose your language):</span>
+              <span v-else>準備が整いましたら、以下のGoogleフォームから申請ください (言語を選択可) :</span>
 
               <div class="stepBox">
-                <span>{{ t('about.japanese') }}<a href="https://forms.gle/rThPAEXRG2dAu9tE7">https://forms.gle/rThPAEXRG2dAu9tE7</a></span>
-                <span>{{ t('about.english') }}<a href="https://forms.gle/jhr99yrbbSSBGp5u7">https://forms.gle/jhr99yrbbSSBGp5u7</a></span>
+                <span><span class="boldSpan">{{ t('about.japanese') }}</span><a href="https://forms.gle/rThPAEXRG2dAu9tE7">https://forms.gle/rThPAEXRG2dAu9tE7</a></span>
+                <span><span class="boldSpan">{{ t('about.english') }}</span><a href="https://forms.gle/jhr99yrbbSSBGp5u7">https://forms.gle/jhr99yrbbSSBGp5u7</a></span>
               </div>
 
               <span>{{ t('about.forms') }}</span>
 
-              <span class="stepHeader">
+              <span class="stepHeader" style="margin-top: 15px">
                 {{ t('about.step3') }}
               </span>
 
-              <div class="stepBox">
-                <span>{{ t('about.possible') }}</span>
-                <span>{{ t('about.planned') }}</span>
-                <span>{{ t('about.submitted') }}</span>
-                <span>{{ t('about.times') }}</span>
+              <div v-if="state.langEn" class="stepBox">
+                <span>
+                  • Requests submitted by <span class="boldSpan">November 1, 2025</span> will be processed on a priority basis and<br>
+                  handled as promptly as possible.
+                </span>
+                <span>
+                  • Transfers for these priority requests are planned to begin <span class="boldSpan">November 1</span> and are<br>
+                  expected to be completed by <span class="boldSpan">December 1, 2025</span>, subject to partner processing times.
+                </span>
+                <span>• Requests submitted after November 1 will be processed on a rolling monthly basis<br>
+                  (i.e. in the month following submission).</span>
+                <span>• Because of the high volume of requests and partner processing times, each round of<br> transfers may take up to one month to fully complete.</span>
+              </div>
+              <div v-else class="stepBox">
+                <span>
+                  • <span class="boldSpan">2025年11月1日までに提出されたリクエストは優先的に処理され、</span><br>可能な限り迅速に対応いたします
+                </span>
+                <span>
+                  • 優先リクエストの送金は<span class="boldSpan">11月1日から開始され、</span>パートナー側の処理時間に依存しま<br>すが、<span class="boldSpan">12月1日までに完了する予定</span>です
+                </span>
+                <span>• 11月1日以降に提出されたリクエストは、翌月以降のサイクルで順次処理されます</span>
+                <span>•	リクエスト件数やパートナー側の処理状況により、各処理サイクルの完了には最大で1<br>か月かかる場合があります</span>
               </div>
 
-              <span>
-                {{ t('about.transfers') }}
+              <span v-if="state.langEn">
+                <span class="boldSpan">Important Disclaimer:</span> Please double-check all wallet addresses carefully before submitting.<br>
+                <span class="boldSpan">Neither Procyon nor its mining pool partner can recover funds sent to an incorrect<br>
+                address or accept liability for transfers made to addresses provided incorrectly. By<br>
+                submitting your request, you accept full responsibility for the accuracy of all information<br>
+                provided.</span>
+              </span>
+              <span v-else>
+                <span class="boldSpan">重要な免責事項:</span> ご提出いただく前に、必ずすべてのウォレットアドレスに誤りがないかご確<br>
+                認ください。<span class="boldSpan">Procyonおよびマイニングプールパートナー宛に誤ったウォレットアドレスを提<br>
+                出され、マイニングプールパートナーが対象アドレス宛に送金を実施した際にはその資金は回<br>
+                収・補填することはできません。また、Procyonおよびマイニングプールパートナーは、誤っ<br>
+                たアドレスに送金された場合の責任は負いかねます。本フォームを提出することで、入力情報<br>
+                の正確性についてユーザーご自身が最終的な責任を負うことに同意いただいたものとみなされ<br>
+                ますので予めご了承ください。</span>
               </span>
 
-              <span class="stepHeader">
+              <span class="stepHeader" style="font-size: 20px; margin-top: 20px">
                 {{ t('about.commitment') }}
               </span>
 
-              <span>
-                {{ t('about.patience') }}
+              <span v-if="state.langEn">
+                We know words may not be enough, but we are committed to handling this process openly,<br>
+                fairly, and safely within the limits of Singapore law. We appreciate your patience and<br>
+                understanding as we complete this process securely. For security and compliance reasons,<br>
+                please do not send personal or withdrawal information by email — all requests must be<br>
+                submitted through the official withdrawal form above.
+              </span>
+              <span v-else>
+                言葉だけでは十分でないかもしれませんが、弊社はこのプロセスを透明性、公平性、安全性を<br>
+                もって、シンガポール法の範囲内で遂行いたします。このプロセスを安全に完了するにあた<br>
+                り、皆さまのご辛抱とご理解に心より感謝申し上げます。<br>
+                なお、セキュリティおよびコンプライアンスの観点から、メールでの個人情報や出金情報のご<br>
+                依頼は受け付けておりません。<br>
+                必ず上記の『資産の出金申請フォーム』を通じてご提出ください。
               </span>
 
-              <span>
+              <span class="boldSpan">
                 {{ t('about.procyon') }}
               </span>
             </div>
+
           </div>
 
         </div>
@@ -155,7 +249,7 @@ import {useI18n} from "vue-i18n";
 const { t, locale } = useI18n()
 
 const state = reactive({
-  langEn: false
+  langEn: true
 })
 
 const handleEn = () => {
@@ -400,7 +494,7 @@ ul.language-picker li.selected {
 }
 
 .content {
-  max-width: 1280px;
+  width: 950px;
   margin: 0 auto;
   padding: 24px;
 }
@@ -417,7 +511,7 @@ ul.language-picker li.selected {
 }
 
 .Header-span{
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 100%;
 }
@@ -429,6 +523,10 @@ ul.language-picker li.selected {
   background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
 }
 
+.boldSpan{
+  font-weight: bold !important;
+}
+
 .topInfo{
   width: 100%;
   display: flex;
@@ -437,9 +535,22 @@ ul.language-picker li.selected {
   padding-top: 36px;
 
   span{
-  font-size: 14px;
-  font-weight: 400;
-    line-height: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+
+.jpInfo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  span{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
   }
 }
 
@@ -451,15 +562,15 @@ ul.language-picker li.selected {
   gap: 20px;
 
   .fundHeader{
-  font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 100%;
   }
 
   span{
-  font-size: 14px;
-  font-weight: 400;
-    line-height: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
   }
 
 }
@@ -472,20 +583,22 @@ ul.language-picker li.selected {
   gap: 20px;
 
   .stepHeader{
-  font-size: 14px;
-  font-weight: 600;
+    font-size: 14px;
+    font-weight: 600;
     line-height: 100%;
   }
 
   .stepBox{
-  display: flex;
+    display: flex;
     flex-direction: column;
+    gap: 18px;
+    margin-left: 40px;
   }
 
   span{
-  font-size: 14px;
-  font-weight: 400;
-    line-height: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
   }
 
 }
