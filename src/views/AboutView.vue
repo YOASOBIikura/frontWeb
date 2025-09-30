@@ -21,7 +21,7 @@
           <div class="content-glass" style="width: 100%;">
 
             <span class="Header-span">
-              {{$t('about.title')}}
+              {{ t('about.title') }}
             </span>
 
             <div class="Header-line">
@@ -29,7 +29,7 @@
 
             <div class="topInfo">
               <span>
-                {{$t('about.platform')}}
+                {{ t('about.platform') }}
               </span>
 
               <span v-if="state.langEn">
@@ -40,84 +40,84 @@
               </span>
 
               <span>
-                {{$t('about.we')}}
+                {{ t('about.we') }}
               </span>
 
               <span>
-                {{$t('about.reassure')}}}
+                {{ t('about.reassure') }}
               </span>
 
               <span>
-                {{$t('about.must')}}
+                {{ t('about.must') }}
               </span>
 
-            </div>
+          </div>
 
             <div class="fundInfo">
               <span class="fundHeader">
-                {{$t('about.funds')}}
+                {{ t('about.funds') }}
               </span>
 
               <span>
-                {{$t('about.mining')}}
+                {{ t('about.mining') }}
               </span>
 
               <span>
-                {{$t('about.process')}}
+                {{ t('about.process') }}
               </span>
-            </div>
+        </div>
 
             <div class="stepInfo">
               <span class="stepHeader">
-                {{$t('about.step1')}}
+                {{ t('about.step1') }}
               </span>
 
-              <span>{{$t('about.ready')}}</span>
+              <span>{{ t('about.ready') }}</span>
 
               <div class="stepBox">
-                <span>{{$t('about.KYC')}}</span>
-                <span>{{$t('about.passport')}}</span>
-                <span>{{$t('about.withdrawal')}}</span>
+                <span>{{ t('about.KYC') }}</span>
+                <span>{{ t('about.passport') }}</span>
+                <span>{{ t('about.withdrawal') }}</span>
               </div>
 
               <span class="stepHeader">
-                {{$t('about.step2')}}
+                {{ t('about.step2') }}
               </span>
 
-              <span>{{$t('about.prepared')}}</span>
+              <span>{{ t('about.prepared') }}</span>
 
               <div class="stepBox">
-                <span>{{$t('about.japanese')}}<a href="https://forms.gle/rThPAEXRG2dAu9tE7">https://forms.gle/rThPAEXRG2dAu9tE7</a></span>
-                <span>{{$t('about.english')}}<a href="https://forms.gle/jhr99yrbbSSBGp5u7">https://forms.gle/jhr99yrbbSSBGp5u7</a></span>
+                <span>{{ t('about.japanese') }}<a href="https://forms.gle/rThPAEXRG2dAu9tE7">https://forms.gle/rThPAEXRG2dAu9tE7</a></span>
+                <span>{{ t('about.english') }}<a href="https://forms.gle/jhr99yrbbSSBGp5u7">https://forms.gle/jhr99yrbbSSBGp5u7</a></span>
               </div>
 
-              <span>{{$t('about.forms')}}</span>
+              <span>{{ t('about.forms') }}</span>
 
               <span class="stepHeader">
-                {{$t('about.step3')}}
+                {{ t('about.step3') }}
               </span>
 
               <div class="stepBox">
-                <span>{{$t('about.possible')}}</span>
-                <span>{{$t('about.planned')}}</span>
-                <span>{{$t('about.submitted')}}</span>
-                <span>{{$t('about.times')}}</span>
+                <span>{{ t('about.possible') }}</span>
+                <span>{{ t('about.planned') }}</span>
+                <span>{{ t('about.submitted') }}</span>
+                <span>{{ t('about.times') }}</span>
               </div>
 
               <span>
-                {{$t('about.transfers')}}
+                {{ t('about.transfers') }}
               </span>
 
               <span class="stepHeader">
-                {{$t('about.commitment')}}
+                {{ t('about.commitment') }}
               </span>
 
               <span>
-                {{$t('about.patience')}}
+                {{ t('about.patience') }}
               </span>
 
               <span>
-                {{$t('about.procyon')}}
+                {{ t('about.procyon') }}
               </span>
             </div>
           </div>
@@ -152,7 +152,7 @@
 import {reactive, watch} from "vue";
 import {useI18n} from "vue-i18n";
 
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 
 const state = reactive({
   langEn: false
@@ -437,8 +437,8 @@ ul.language-picker li.selected {
   padding-top: 36px;
 
   span{
-    font-size: 14px;
-    font-weight: 400;
+  font-size: 14px;
+  font-weight: 400;
     line-height: 100%;
   }
 }
@@ -451,14 +451,14 @@ ul.language-picker li.selected {
   gap: 20px;
 
   .fundHeader{
-    font-size: 14px;
+  font-size: 14px;
     font-weight: 600;
     line-height: 100%;
   }
 
   span{
-    font-size: 14px;
-    font-weight: 400;
+  font-size: 14px;
+  font-weight: 400;
     line-height: 100%;
   }
 
@@ -472,19 +472,19 @@ ul.language-picker li.selected {
   gap: 20px;
 
   .stepHeader{
-    font-size: 14px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
     line-height: 100%;
   }
 
   .stepBox{
-    display: flex;
+  display: flex;
     flex-direction: column;
   }
 
   span{
-    font-size: 14px;
-    font-weight: 400;
+  font-size: 14px;
+  font-weight: 400;
     line-height: 100%;
   }
 

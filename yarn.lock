@@ -413,13 +413,13 @@
     "@intlify/message-compiler" "10.0.8"
     "@intlify/shared" "10.0.8"
 
-"@intlify/core-base@12.0.0-alpha.3":
-  version "12.0.0-alpha.3"
-  resolved "https://registry.npmjs.org/@intlify/core-base/-/core-base-12.0.0-alpha.3.tgz#687ab9657c1997ed903ff91a39265feeef0234a1"
-  integrity sha512-LEvBHBUbiOOtIBkp4IIQENVC5Fg2YHsvdXN1+WRIxQ8hzHbHSBiqZ2l68B/yg8sE1a4S7dqhkaAedunShWPH+Q==
+"@intlify/core-base@11.1.7":
+  version "11.1.7"
+  resolved "https://registry.npmjs.org/@intlify/core-base/-/core-base-11.1.7.tgz#497280e4774011cf0d42eaedb20e9cd4594c0a3f"
+  integrity sha512-gYiGnQeJVp3kNBeXQ73m1uFOak0ry4av8pn+IkEWigyyPWEMGzB+xFeQdmGMFn49V+oox6294oGVff8bYOhtOw==
   dependencies:
-    "@intlify/message-compiler" "12.0.0-alpha.3"
-    "@intlify/shared" "12.0.0-alpha.3"
+    "@intlify/message-compiler" "11.1.7"
+    "@intlify/shared" "11.1.7"
 
 "@intlify/message-compiler@10.0.8":
   version "10.0.8"
@@ -429,12 +429,12 @@
     "@intlify/shared" "10.0.8"
     source-map-js "^1.0.2"
 
-"@intlify/message-compiler@12.0.0-alpha.3":
-  version "12.0.0-alpha.3"
-  resolved "https://registry.npmjs.org/@intlify/message-compiler/-/message-compiler-12.0.0-alpha.3.tgz#46b15c60ac9504e1512acca02165280f4e2e1825"
-  integrity sha512-mDDTN3gfYOHhBnpnlby19UHyvMaOnzdlpsIrxUfs44R/vCATfn8pMOkE8PXD2t410xkocEj3FpDcC9XC/0v4Dg==
+"@intlify/message-compiler@11.1.7":
+  version "11.1.7"
+  resolved "https://registry.npmjs.org/@intlify/message-compiler/-/message-compiler-11.1.7.tgz#047ba659cfd34b0f630dddf73c3f9224bd3af7f8"
+  integrity sha512-0ezkep1AT30NyuKj8QbRlmvMORCCRlOIIu9v8RNU8SwDjjTiFCZzczCORMns2mCH4HZ1nXgrfkKzYUbfjNRmng==
   dependencies:
-    "@intlify/shared" "12.0.0-alpha.3"
+    "@intlify/shared" "11.1.7"
     source-map-js "^1.0.2"
 
 "@intlify/message-compiler@^11.1.10":
@@ -455,10 +455,10 @@
   resolved "https://registry.npmjs.org/@intlify/shared/-/shared-11.1.12.tgz#ab41083e017d622cf63c7dc88a0ee0bc27f4127a"
   integrity sha512-Om86EjuQtA69hdNj3GQec9ZC0L0vPSAnXzB3gP/gyJ7+mA7t06d9aOAiqMZ+xEOsumGP4eEBlfl8zF2LOTzf2A==
 
-"@intlify/shared@12.0.0-alpha.3":
-  version "12.0.0-alpha.3"
-  resolved "https://registry.npmjs.org/@intlify/shared/-/shared-12.0.0-alpha.3.tgz#187f9056f7fdf75b7e2cf03964d306d1cca890db"
-  integrity sha512-ryaNYBvxQjyJUmVuBBg+HHUsmGnfxcEUPR0NCeG4/K9N2qtyFE35C80S15IN6iYFE2MGWLN7HfOSyg0MXZIc9w==
+"@intlify/shared@11.1.7":
+  version "11.1.7"
+  resolved "https://registry.npmjs.org/@intlify/shared/-/shared-11.1.7.tgz#54e60d52b73fb25019e2689d6531a54928b40194"
+  integrity sha512-4yZeMt2Aa/7n5Ehy4KalUlvt3iRLcg1tq9IBVfOgkyWFArN4oygn6WxgGIFibP3svpaH8DarbNaottq+p0gUZQ==
 
 "@intlify/unplugin-vue-i18n@^11.0.1":
   version "11.0.1"
@@ -478,15 +478,6 @@
     picocolors "^1.0.0"
     unplugin "^2.3.4"
     vue "^3.5.14"
-
-"@intlify/vue-i18n-core@12.0.0-alpha.3":
-  version "12.0.0-alpha.3"
-  resolved "https://registry.npmjs.org/@intlify/vue-i18n-core/-/vue-i18n-core-12.0.0-alpha.3.tgz#9ee222e53544802b926e7079bbf5b77704088a68"
-  integrity sha512-YwAfTQILHN+VoK0P/Yv47GbKnEf1lhfbliyVyW3knAL1EmT8m0m3rwffXJnwyQhYw8Jpx85CpL49WkSgyi6d/g==
-  dependencies:
-    "@intlify/core-base" "12.0.0-alpha.3"
-    "@intlify/shared" "12.0.0-alpha.3"
-    "@vue/devtools-api" "^6.5.0"
 
 "@intlify/vue-i18n-extensions@^8.0.0":
   version "8.0.0"
@@ -1820,6 +1811,15 @@ vite@^7.0.6:
   optionalDependencies:
     fsevents "~2.3.3"
 
+vue-i18n@11.1.7:
+  version "11.1.7"
+  resolved "https://registry.npmjs.org/vue-i18n/-/vue-i18n-11.1.7.tgz#a26c0224d1311ac89b82ff6d0ee45f68b5099237"
+  integrity sha512-CDrU7Cmyh1AxJjerQmipV9nVa//exVBdhTcWGlbfcDCN8bKp/uAe7Le6IoN4//5emIikbsSKe9Uofmf/xXkhOA==
+  dependencies:
+    "@intlify/core-base" "11.1.7"
+    "@intlify/shared" "11.1.7"
+    "@vue/devtools-api" "^6.5.0"
+
 vue-i18n@^10.0.0:
   version "10.0.8"
   resolved "https://registry.npmjs.org/vue-i18n/-/vue-i18n-10.0.8.tgz#adce21f875b29589c8bd602eb28b5c6ad2d85c97"
@@ -1827,16 +1827,6 @@ vue-i18n@^10.0.0:
   dependencies:
     "@intlify/core-base" "10.0.8"
     "@intlify/shared" "10.0.8"
-    "@vue/devtools-api" "^6.5.0"
-
-vue-i18n@^12.0.0-alpha.3:
-  version "12.0.0-alpha.3"
-  resolved "https://registry.npmjs.org/vue-i18n/-/vue-i18n-12.0.0-alpha.3.tgz#96afe398d62ccbfb29b65a2d8e8dd49cea0e557c"
-  integrity sha512-+KQgD9LJoHfGCdJh3gaLdVS/Sps1n860+6wsjyeNLWJeEofjdVH7KPjz4rAeBlTAUaIDlIjHoXQY0Lk+8B6S9w==
-  dependencies:
-    "@intlify/core-base" "12.0.0-alpha.3"
-    "@intlify/shared" "12.0.0-alpha.3"
-    "@intlify/vue-i18n-core" "12.0.0-alpha.3"
     "@vue/devtools-api" "^6.5.0"
 
 vue-router@^4.5.1:
