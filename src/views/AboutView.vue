@@ -494,7 +494,8 @@ ul.language-picker li.selected {
 }
 
 .content {
-  width: 950px;
+  max-width: 950px;
+  width: 100%;
   margin: 0 auto;
   padding: 24px;
 }
@@ -725,7 +726,6 @@ footer .content ul li::before {
   }
 
   .desktop {
-    display: none;
   }
 
   .mobile {
@@ -738,7 +738,7 @@ footer .content ul li::before {
   }
 
   header.desktop {
-    display: none;
+
   }
 
   header.mobile {
