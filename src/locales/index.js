@@ -12,8 +12,8 @@ const message = {
 
 const i18n = createI18n({
     legacy: false,
-    locale: 'en',
-    fallbackLocale: 'jp',
+    locale: 'jp',
+    fallbackLocale: 'en',
     globalInjection: true,
     messages: message,
     interpolation: {
